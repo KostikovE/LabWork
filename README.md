@@ -11,5 +11,6 @@
 5                  | [Lab №5](https://github.com/KostikovE/LabWork/tree/main/Lab%20№5)
 6                  | [Lab №6](https://github.com/KostikovE/LabWork/tree/main/Lab%20№6)
 7                  | [Lab №7](https://github.com/KostikovE/LabWork/tree/main/Lab%20№7)
+8                  | [Lab №8](https://github.com/KostikovE/LabWork/tree/main/Lab%20№8)
 __ __
 ![Logo](https://github.com/KostikovE/LabWork/assets/169641706/54c0110c-b637-4aa1-8b33-bfb02b4e41aa)
