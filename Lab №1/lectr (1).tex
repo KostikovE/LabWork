@@ -1,0 +1,359 @@
+%https://ru.overleaf.com/learn
+
+% Логика документа
+
+% Выбираем класс документа и классовые опции 
+% Класс определяет вид и структуру документа. 
+% Класс -- это база, которую можно править с помощью подключаемых стилевых файлов. 
+% В классе задаётся геометрия страницы и определены команды секционирования. 
+
+% Имеются следующие базовые классы:
+% article (статья), 
+% book (книга), 
+% report (отчёт), 
+% proc (доклад), 
+% letter (письмо) и 
+% slides (слайды)!.
+
+% Стандартные стилевые опции:
+% 10pt|11pt|12pt — установка базового размера шрифта. 
+% a4paper — установка размера листа бумаги. Следует использовать всегда, так как по умолчанию LATEX использует размер листа letter.
+% draft — режим черновой печати для «отлавливания» проблем вёрстки. 
+% oneside|twoside — форматирование документа для односторонней и двухсторонней печати, соответственно.
+% twocolumn — печать в две колонки.
+
+% Модификации классов:
+% extarticle, extbook, extletter, extproc, extreport (8pt, 9pt, 14pt, 17pt и 20pt)
+
+\documentclass[a4paper, 14pt]{article} 
+% Пакеты подключаются командой 
+% \usepackage[необязательные параметры]{имя пакета}
+
+% Выбор кодировки файла
+\usepackage[utf8]{inputenc}
+
+\usepackage{amsmath, amssymb}
+
+\usepackage{listings}
+
+%Выбор кодировки ширифтов
+%для тестов только на русском языке этот параметр можно не указывать
+\usepackage[T2A]{fontenc} 
+% Подключение языков документа
+% Последний язык доминирующий
+\usepackage[english, russian]{babel}  
+
+%Задаем параметры документа
+\usepackage[top = 20 mm, 
+            bottom = 20 mm, 
+            left = 30 mm, 
+            right = 30 mm]{geometry}
+            
+%Красная строка в первом абзаце
+\usepackage{indentfirst}
+%Величина отступа красной строки
+\setlength{\parindent}{12.5 mm}
+
+%Межстрочный интервал
+%\def\baselinestretch{1.5}
+\usepackage{setspace}
+\setstretch{1}
+
+% Задание стиля оформления страницы
+% empty нет ни колонтитулов, ни номеров страниц;
+% plain номера страниц ставятся внизу в середине строки, колонтитулов нет; основной стиль — article
+% headings присутствуют колонтитулы (включающие в себя и номера страниц); основной стиль — book
+% myheadings присутствуют колонтитулы, оформленные так же, как в предыдущем случае; отличие в том, что текст, печатающийся в колонтитулах (в стандартном случае это номера и названия разделов документа), не порождаются \LaTeX’ом автоматически, а задается пользователем в явном виде.
+
+%Команда \thispagestyle, задающая стиль оформления одной отдельно взятой страницы
+
+\pagestyle{plain}
+
+
+
+\usepackage{caption}
+\captionsetup[figure]{
+                    labelsep=endash, 
+                    font=large, 
+                    justification=centering, 
+                    singlelinecheck=false
+                    }
+
+\begin{document}
+\fontsize{14}{18}\selectfont
+\thispagestyle{empty}
+\newpage
+\tableofcontents
+\newpage
+
+\section{Набор формул}
+
+\begin{center}
+{\bf Степени и индексы}
+\end{center}
+
+\noindent $\blacktriangleright$ Набор в \LaTeX:
+\begin{lstlisting}
+$$
+R_{i,j}^{k,n}
+$$
+\end{lstlisting}
+
+\noindent $\blacktriangleright$ На печати 
+$$
+R_{i,j}^{k,n}
+$$
+
+\begin{center}
+{\bf Дроби}    
+\end{center}
+
+\noindent $\blacktriangleright$ Набор в \LaTeX:
+\begin{lstlisting}
+$$
+\frac{1}{2}, 
+\frac{1}{1+\frac{1}{2}}
+$$
+\end{lstlisting}
+\noindent $\blacktriangleright$ На печати 
+$$
+\frac{1}{2}, \frac{1}{1+\frac{1}{2}}
+$$
+
+\noindent $\blacktriangleright$ Набор в \LaTeX:
+\begin{lstlisting}
+$$
+\dfrac{1}{2}, 
+\dfrac{1}{1+\dfrac{1}{2}}
+$$
+\end{lstlisting}
+\noindent $\blacktriangleright$ На печати 
+$$
+\dfrac{1}{2}, \dfrac{1}{1+\dfrac{1}{2}}
+$$
+
+\begin{center}
+{\bf Скобки переменного размера}    
+\end{center}
+
+\noindent $\blacktriangleright$ Набор в \LaTeX:
+\begin{lstlisting}
+$$
+\left.
+\left(T
+\right) \dfrac{1}{2}
+\right)
+$$
+\end{lstlisting}
+
+$$
+\left.
+\left(T
+\right) \dfrac{1}{2}
+\right)
+$$
+
+
+
+Корни
+$$
+\sqrt{4}
+$$
+
+Штрифи и многоточия
+$$
+f''
+$$
+$$
+\ldots \cdots \vdots \ddots 
+$$
+
+Имена математических функций
+$$
+\sin() \cos() \tanh \log_{10}{2} \ln
+$$
+Греческий алфавит
+$$\alpha, \beta \Sigma \sigma \epsilon \varepsilon$$
+Символы
+$$
+\diamond
+\blacktriangleleft
+$$
+
+Операции с пределами и без
+$$
+\left.\int\limits_{-\infty}^{+\infty} \sin() \, dx = -\cos(x)\right|_{a}^{b}
+$$
+$$
+\sum\limits_{i=1}^{n}
+$$
+
+Нумерация формул
+\begin{equation} \label{eq2}
+\cos(x)    
+\end{equation}
+
+\begin{verbatim}
+\begin{equation*} 
+\sin(x)    \leqno{(**)}
+\end{equation*}
+\end{verbatim}
+
+
+\begin{equation*} 
+\sin(x) \leqno{(**)}
+\end{equation*}
+
+\begin{equation*} 
+\cos(x)  \eqno{(12)}  
+\end{equation*}
+
+Включение текста в формулы \eqref{eq2}
+
+\begin{center}
+Надстрочные символы
+\end{center}
+$$
+\overline{1,k}, \quad
+\hat{x} \quad
+\widehat{AB} \quad
+\overrightarrow{AB}
+$$
+Для набора матриц используются следующие окружения:
+$$
+\begin{pmatrix}
+a_{11} & a_{12} & \ldots & a_{1n}\\
+a_{21} & a_{22} & \ldots & a_{2n}\\
+\vdots & \vdots & \ddots & \vdots \\
+a_{n1} & a_{n2} & \ldots & a_{nn}
+\end{pmatrix}
+$$
+
+$$
+\begin{vmatrix}
+a_{11} & a_{12} & \ldots & a_{1n}\\
+a_{21} & a_{22} & \ldots & a_{2n}\\
+\vdots & \vdots & \ddots & \vdots \\
+a_{n1} & a_{n2} & \ldots & a_{nn}
+\end{vmatrix}
+$$
+
+\begin{equation*} 
+\sin(x)    \leqno{(**)}
+\end{equation*}
+
+$$
+\left(
+\begin{array}{cccc}
+a_{11} & a_{12} & \ldots & a_{1n}\\
+a_{21} & a_{22} & \ldots & a_{2n}\\
+\vdots & \vdots & \ddots & \vdots \\
+a_{n1} & a_{n2} & \ldots & a_{nn}
+\end{array}
+\right)
+$$
+\parbox{75 mm}{\begin{multline} 
+1+2+3+4+5+ \\
++6+7+8+ \\
+ +9+10 = 45. 
+\end{multline}}
+\parbox{75 mm}{\begin{multline} 
+1+2+3+4+5+ \\
++6+7+8+ \\
+ +9+10 = 45. 
+\end{multline}}
+
+Многострочные выключные формулы
+
+\begin{multline*} 
+1+2+3+4+5+ \\
++6+7+8+ \\
+ +9+10 = 45. 
+\end{multline*}
+
+\begin{gather} %\notag
+1+2=3, \notag \\
+1+4=5, \\
+100+101 = 201.
+\end{gather}
+
+\begin{align}  %\notag
+1+2=3, \\
+1+4=5, \notag \\
+100+101 = 201.
+\end{align}
+
+
+\begin{equation}
+\begin{split}
+1999&=1000+900+{}\\
+&+90+9
+\end{split}
+\end{equation}
+
+\begin{align}
+7\times 9& =63 & 63:9& =7\\
+9\times 10& =90 & 90:10& =9
+\end{align}
+
+
+Пробелы в формулах вручную \\
+\begin{tabular}{|c|c|c|}
+\hline
+Синтаксис в \LaTeX & Комментарий & Примеры \\ \hline
+\begin{lstlisting}
+$x\quad y$
+\end{lstlisting}
+& Пробел в 1em
+& $x\quad y$ \\ \hline
+\begin{lstlisting}
+$x\qquad y$
+\end{lstlisting}
+& Пробел в 2em
+& $x\qquad y$ \\ \hline
+\begin{lstlisting}
+$\int\sin(x)dx$
+\end{lstlisting}
+& Без пробела
+& $\int\sin(x)dx$\\ \hline
+\begin{lstlisting}
+$\int\sin(x)\!dx$
+\end{lstlisting}
+& Отрицательный пробел
+& $\int\sin(x)\!dx$\\ \hline
+\begin{lstlisting}
+$\int\sin(x)\,dx$
+\end{lstlisting}
+& Тонкий пробел
+& $\int\sin(x)\,dx$\\ \hline
+\begin{lstlisting}
+$\int\sin(x)\:dx$
+\end{lstlisting}
+& Средний пробел
+& $\int\sin(x)\:dx$\\ \hline
+\begin{lstlisting}
+$\int\sin(x)\;dx$
+\end{lstlisting}
+& Толстый пробел
+& $\int\sin(x)\;dx$\\ \hline
+\end{tabular}
+
+Листинги
+
+\begin{lstlisting}
+\begin{equation}
+\begin{split}
+1999&=1000+900+{}\\
+&+90+9
+\end{split}
+\end{equation}
+\end{lstlisting}
+
+\section{Набор текста}
+
+\section{Верстка таблиц}
+
+\section{Подготовка презентаций}
+
+\end{document}
+
