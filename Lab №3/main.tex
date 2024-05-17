@@ -1,0 +1,107 @@
+\documentclass[a4paper, 18pt]{article} 
+\usepackage{ucs} 
+\usepackage[utf8x]{inputenc} % Включаем поддержку UTF8  
+\usepackage[russian]{babel} 
+\usepackage[top = 20 mm, 
+            bottom = 20 mm, 
+            left = 30 mm, 
+            right = 30 mm]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb}
+\usepackage{listings}
+\usepackage{indentfirst}
+\setlength{\parindent}{12.5 mm}
+\usepackage{setspace}
+\setstretch{1}
+
+
+\title{Метод разделения переменных}
+\author{ }
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\begin{Large}
+    
+
+\ Слагаемое $\alpha u_t $ в правой части уравнения соостветствует трению, пропорциональному скорости.
+
+Рассмотрим сначала задачу о распространении переодического граничного режима:
+\begin{center}
+$ u(l,t) = A \cos \omega t $ (или $u(l,t) = B \sin \omega t )$       \eqno{(62)}               
+\end{center}
+
+
+$$u(l,t)=0 \eqno{(63)} $$
+
+\ Для дальнейшего нам удобнее записать граничное условие в комплексной форме 
+
+$$u(l,t) = Ae^i^\omega ^t. \eqno{(64)}$$
+\ Если 
+$$u(x,t)=u^(^1^) (x,t) + iu^(^2^)(x,t)  $$
+удовлетворяет уравнению (61) с граничными условиями (63) и (64), то $u^(^1^) (x,t) $ и $u^(^2^) (x,t)$ - его действительная и мнимая части - в отдельности удовлетворяют тому же уравнению (в силу его линейности), условию (63) и граничным условиям при $x=l$
+$$u^(^1^) (l,t) = A\cos \omega t,$$
+$$u^(^2^) (l,t) = A\sin \omega t.$$
+Итак, найдем решение задачи
+
+\eqno {(65)}
+\begin{cases}  
+$$u_t_t = a^2 u_x_x -au_t,$$\\
+
+$$u(0,t)=0,$$ \\    
+
+$$u(l,t)=Ae^i^\omega^t.$$ \\
+\end{cases}
+
+Полагая
+$$u(x,t)=X(x)e^i^\omega^t$$
+и подставляя это выражение в уравнение, получим для функции X(x) следущую задачу:
+$$X^" + k^2X=0 (k^2= \frac{\omega}{a^2} -ia \frac{\omega}{a^2}), \eqno(66)$$ 
+
+$$ X(0) = 0,    \eqno(67) $$
+
+$$X(l)=A \eqno(68)$$ 
+Из уравнения (66) и граничного условия (67) находим:
+$$X(x)=C\sin kx$$
+Условие при $x=l$  дает :
+$$C = \frac{a}{\sin kl}, \eqno(69)$$
+так что 
+$$X(x)= A \frac{\sin kx} {\sin kl} = X_1(x) +iX_2(x), \eqno(70)$$
+где $X_1(x)$ и $X_2(x)$ - действиельная мнимая части $X(x)$
+
+\begin{center}
+    Уравнение гиперболического типа
+\end{center}
+\ Искомое решение можно представить в виде:
+$$u(x,t) =[X_1(x)+iX_2(x)]e^i^\omega^t=u^(^1^)(x,t)+iu^(^2^)(x,t),$$
+где
+$$u^(^1^)(x,t)=X_1(x)\cos \omega t - X_2(x) \sin \omega t$$
+$$u^(^2^)(x,t)=X_1(x)\sin \omega t - X_2(x) \cos \omega t$$
+Переходя к пределу при $a \rightarrow 0$, найдем, что 
+$$\bar k = \lim_{a\to\ 0} k\ = \frac{\omega}{a} \enqo(71)$$
+и, соответственно,
+$$\bar u^(^1^)(x,t) = \lim_{a\to\ 0} u^(^1^)\ (x,t)= A \frac {\sin \frac{\omega}{a}x}{\sin \frac{\omega}{a}l} \cos \omega t, \enqo(72) $$
+
+$$\bar u^(^2    ^)(x,t) = \lim_{a\to\ 0} u^(^2^)\ (x,t)= A \frac {\sin \frac{\omega}{a}x}{\sin \frac{\omega}{a}l} \sin \omega t, \enqo(73)$$ 
+Рассмотрим следующую задачу
+\begin{cases} 
+$$u_t_t = a^2u_x_x, 0 \textless x \textless l, t \textgreater - \infty;$$\\
+$$u(0,t) = \sigma_1(t), t \textgreater - \infty;$$\\
+$$u(l,t) = \sigma_2(t),$$\\
+\end{cases}
+которую будем называть задачей $(I_0)$.Очевидно, что $\bar u^(^1^) (x,t)$ и $\bar u^(^2^) (x,t)$ являются решениями задачи $(I_0)$ при граничных условиях 
+$$\bar u^(^1^) (0,t) = 0 ,   \bat u^(^2^) (l,t) = A \cos  \omega t$$
+$$ \bat u^(^2^) (0,t) = 0,   \bat u^(^2^) (l,t) = A \sin  \omega t$$
+Решение задачи при $\alpha = 0 $ существует не всегда. Если частота вынужденных колебаний $\omega$ совпадает с собственной  частотой $\omega_n$ колебаний струны с закрепленными концами 
+$$\omega = \omega_n= \frac{\Pi n} {i} a,$$
+то знаменатель в формулах  для $\bar u^(^1^)$ и $\bar u^(^2^)$ обращается в нуль  и решения задачи без начальных условий не существует. 
+
+\ Этот факт имеет простой  физический смысл : при $\omega - \omega_n $ наступает резонанс , т.е. не существует установившегося режима. Амплитуда, начиная с некоторого момента $t = t_0$, неограниченно нарастает.
+
+\ При наличии трения $(\alpha \neq 0)$ установившийся режим возможен при любом \omega, так как $\sin kl \neq 0 $ при комплексном k.
+
+
+\end{Large}
+\end{document}
